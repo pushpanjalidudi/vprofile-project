@@ -1,7 +1,10 @@
+
+
 version: '3.8'
+
 services:
   vprodb:
-    image:pushpanjalidudi/vprofile:db
+    image: pushpanjalidudi/vprofile:db
     build:
       context: ./javaapi
     ports:
@@ -28,13 +31,14 @@ services:
     image: pushpanjalidudi/vprofile:app
     ports:
       - "8081:8080"
-    volumes: 
+    volumes:
       - vproappdata:/usr/local/tomcat/webapps
 
   vproweb:
-    image:pushpanjalidudi/vprofile:web
+    image: pushpanjalidudi/vprofile:web
     ports:
       - "80:80"
+
 volumes:
   vprodbdata: {}
   vproappdata: {}
